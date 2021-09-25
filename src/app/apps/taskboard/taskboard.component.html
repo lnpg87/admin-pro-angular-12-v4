@@ -1,0 +1,127 @@
+<div class="card">
+  <div class="card-body" cdkDropListGroup>
+
+    <div class="mb-3">
+      <button class="btn btn-primary" (click)="openModal(taskModal, null)">Create Task</button>
+    </div>
+
+    <div class="taskboard page-height p-0">
+      <div class="taskboard-wrapper todos">
+        <div class="taskboard-list">
+          <h6 class="taskboard-header font-weight-bold mt-2">Todos</h6>
+          <div class="taskboard-cards" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="todos">
+            <div class="taskboard-task cursor-pointer" cdkDrag *ngFor="let todo of todos">
+              <div class="taskboard-task-title font-medium">{{ todo.title }}</div>
+              <small class="card-text text-muted">{{ todo.desc }}</small>
+              <div class="mt-2 d-flex justify-content-start align-items-center">
+                <a href="javascript:void(0)" class="link" (click)="openModal(taskModal, todo)">
+                  <i-feather name="eye" class="feather-xs"></i-feather>
+                </a>
+                <a href="javascript:void(0)" class="text-danger ml-2" (click)="deleteTask(todo.id)">
+                  <i-feather name="trash-2" class="feather-xs"></i-feather>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="taskboard-wrapper inprocess">
+        <div class="taskboard-list">
+          <h6 class="taskboard-header font-weight-bold mt-2">In Process</h6>
+          <div class="taskboard-cards" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="process">
+            <div class="taskboard-task cursor-pointer" cdkDrag *ngFor="let inprocess of process">
+              <div class="taskboard-task-title font-medium">{{ inprocess.title }}</div>
+              <small class="card-text text-muted">{{ inprocess.desc }}</small>
+              <div class="mt-2 d-flex justify-content-start align-items-center">
+                <a href="javascript:void(0)" class="link" (click)="openModal(taskModal, inprocess)">
+                  <i-feather name="eye" class="feather-xs"></i-feather>
+                </a>
+                <a href="javascript:void(0)" class="text-danger ml-2" (click)="deleteTask(inprocess.id)">
+                  <i-feather name="trash-2" class="feather-xs"></i-feather>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="taskboard-wrapper pending">
+        <div class="taskboard-list">
+          <h6 class="taskboard-header font-weight-bold mt-2">Pending todos</h6>
+          <div class="taskboard-cards" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="pendings">
+            <div class="taskboard-task cursor-pointer" cdkDrag *ngFor="let pendingtask of pendings">
+              <div class="taskboard-task-title font-medium">{{ pendingtask.title }}</div>
+              <small class="card-text text-muted">{{ pendingtask.desc }}</small>
+              <div class="mt-2 d-flex justify-content-start align-items-center">
+                <a href="javascript:void(0)" class="link" (click)="openModal(taskModal, pendingtask)">
+                  <i-feather name="eye" class="feather-xs"></i-feather>
+                </a>
+                <a href="javascript:void(0)" class="text-danger ml-2" (click)="deleteTask(pendingtask.id)">
+                  <i-feather name="trash-2" class="feather-xs"></i-feather>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="taskboard-wrapper taskdone">
+        <div class="taskboard-list">
+          <h6 class="taskboard-header font-weight-bold mt-2">Task Done</h6>
+          <div class="taskboard-cards" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="done">
+            <div class="taskboard-task cursor-pointer" cdkDrag *ngFor="let taskdone of done">
+              <div class="taskboard-task-title font-medium">{{ taskdone.title }}</div>
+              <small class="card-text text-muted">{{ taskdone.desc }}</small>
+              <div class="mt-2 d-flex justify-content-start align-items-center">
+                <a href="javascript:void(0)" class="link" (click)="openModal(taskModal, taskdone)">
+                  <i-feather name="eye" class="feather-xs"></i-feather>
+                </a>
+                <a href="javascript:void(0)" class="text-danger ml-2" (click)="deleteTask(taskdone.id)">
+                  <i-feather name="trash-2" class="feather-xs"></i-feather>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+<ng-template #taskModal let-modal>
+
+  <div class="modal-header">
+    <h3 class="modal-title font-weight-bold" id="taskLabel">Task</h3>
+    <button type="button" class="close" (click)="closeBtnClick()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form [formGroup]="task" (ngSubmit)="onSubmit()">
+    <div class="modal-body">
+      <div class="form-group row">
+        <label for="name" class="col-sm-4 col-form-label">Task Title</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" formControlName="Title" id="title">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="position" class="col-sm-4 col-form-label">Description</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" formControlName="Description" id="description">
+        </div>
+      </div>
+
+      
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-dark" (click)="closeBtnClick()">Close</button>
+        <button type="submit" class="btn btn-primary" [disabled]="task.invalid">Save</button>
+      </div>
+  </form>
+</ng-template>

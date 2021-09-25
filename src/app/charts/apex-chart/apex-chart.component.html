@@ -1,0 +1,147 @@
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Line Chart</h4>
+                <h6 class="card-subtitle">This is the simple example of line chart</h6>
+
+                <apx-chart [series]="lineChartOptions.series" [chart]="lineChartOptions.chart"
+                    [xaxis]="lineChartOptions.xaxis" [yaxis]="lineChartOptions.yaxis" [grid]="lineChartOptions.grid"
+                    [stroke]="lineChartOptions.stroke" [tooltip]="lineChartOptions.tooltip"
+                    [dataLabels]="lineChartOptions.dataLabels" [legend]="lineChartOptions.legend"
+                    [colors]="lineChartOptions.colors" [markers]="lineChartOptions.markers">
+                </apx-chart>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Area Chart</h4>
+                <h6 class="card-subtitle">This is the simple example of Area chart</h6>
+                <apx-chart [series]="areaChartOptions.series" [chart]="areaChartOptions.chart"
+                    [xaxis]="areaChartOptions.xaxis" [yaxis]="areaChartOptions.yaxis" [grid]="areaChartOptions.grid"
+                    [stroke]="areaChartOptions.stroke" [tooltip]="areaChartOptions.tooltip"
+                    [dataLabels]="areaChartOptions.dataLabels" [legend]="areaChartOptions.legend"
+                    [colors]="areaChartOptions.colors" [markers]="areaChartOptions.markers">
+                </apx-chart>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Column Chart</h4>
+                <h6 class="card-subtitle">This is the simple example of Column chart</h6>
+                <apx-chart [series]="columnChartOptions.series" [chart]="columnChartOptions.chart"
+                    [xaxis]="columnChartOptions.xaxis" [yaxis]="columnChartOptions.yaxis"
+                    [grid]="columnChartOptions.grid" [stroke]="columnChartOptions.stroke"
+                    [tooltip]="columnChartOptions.tooltip" [plotOptions]="columnChartOptions.plotOptions"
+                    [dataLabels]="columnChartOptions.dataLabels" [legend]="columnChartOptions.legend"
+                    [colors]="columnChartOptions.colors" [markers]="columnChartOptions.markers">
+                </apx-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Bar Chart</h4>
+                <h6 class="card-subtitle">This is the simple example of Bar chart</h6>
+                <apx-chart [series]="barChartOptions.series" [chart]="barChartOptions.chart"
+                    [dataLabels]="barChartOptions.dataLabels" [plotOptions]="barChartOptions.plotOptions"
+                    [xaxis]="barChartOptions.xaxis"></apx-chart>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+
+            <div class="card-body">
+                <h4 class="card-title">Mixed Chart</h4>
+                <h6 class="card-subtitle">This is the simple example of Mixed Chart</h6>
+
+                <apx-chart [series]="mixedChartOptions.series" [chart]="mixedChartOptions.chart"
+                    [yaxis]="mixedChartOptions.yaxis" [xaxis]="mixedChartOptions.xaxis"
+                    [labels]="mixedChartOptions.labels" [stroke]="mixedChartOptions.stroke"
+                    [plotOptions]="mixedChartOptions.plotOptions" [markers]="mixedChartOptions.markers"
+                    [fill]="mixedChartOptions.fill" [tooltip]="mixedChartOptions.tooltip"></apx-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Scatter Chart</h4>
+                <h6 class="card-subtitle">This is the simple example of Scatter Chart</h6>
+                <apx-chart [series]="scatterChartOptions.series" [chart]="scatterChartOptions.chart"
+                    [xaxis]="scatterChartOptions.xaxis" [yaxis]="scatterChartOptions.yaxis"></apx-chart>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+
+            <div class="card-body">
+                <h4 class="card-title">Pie Chart</h4>
+                <h6 class="card-subtitle">This is the simple example of Pie Chart</h6>
+
+                <apx-chart [series]="pieChartOptions.series" [chart]="pieChartOptions.chart"
+                    [dataLabels]="pieChartOptions.dataLabels" [legend]="pieChartOptions.legends"
+                    [colors]="pieChartOptions.colors" [stroke]="pieChartOptions.stroke"
+                    [labels]="pieChartOptions.labels" [tooltip]="pieChartOptions.tooltip"
+                    [plotOptions]="pieChartOptions.plotOptions"></apx-chart>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Radial Chart</h4>
+                <h6 class="card-subtitle">This is the simple example of Radial Chart</h6>
+                <apx-chart [series]="radialChartOptions.series" [chart]="radialChartOptions.chart"
+                    [dataLabels]="radialChartOptions.dataLabels" [legend]="radialChartOptions.legends"
+                    [colors]="radialChartOptions.colors" [stroke]="radialChartOptions.stroke"
+                    [labels]="radialChartOptions.labels" [tooltip]="radialChartOptions.tooltip"
+                    [plotOptions]="radialChartOptions.plotOptions"></apx-chart>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+
+            <div class="card-body">
+                <h4 class="card-title">Radar Chart</h4>
+                <h6 class="card-subtitle">This is the simple example of Radar Chart</h6>
+                <apx-chart [series]="radarChartOptions.series" [chart]="radarChartOptions.chart"
+                    [xaxis]="radarChartOptions.xaxis" [stroke]="radarChartOptions.stroke"
+                    [markers]="radarChartOptions.markers" [fill]="radarChartOptions.fill">
+                </apx-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Polar Chart</h4>
+                <h6 class="card-subtitle">This is the simple example of Polar Chart</h6>
+                <apx-chart [series]="polarChartOptions.series" [chart]="polarChartOptions.chart" [labels]="polarChartOptions.labels"
+                    [fill]="polarChartOptions.fill" [stroke]="polarChartOptions.stroke" [responsive]="polarChartOptions.responsive">
+                </apx-chart>
+            </div>
+        </div>
+    </div>
+</div>
